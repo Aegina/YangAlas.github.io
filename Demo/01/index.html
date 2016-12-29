@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+         }
+        body,button{
+            font-family: "微软雅黑";
+        }
+        button,input{
+            outline: 0;
+        }
+        .content{
+            height: 400px;
+            background-image: url("img/plan01.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            box-shadow: 0 5px 10px 0 rgba(150,150,150,0.4);
+            margin-top: 50px;
+            text-align: center;
+        }
+        .steps{
+            padding-top: 80px;
+        }
+        .steps .title h2{
+            color: #666;
+            font-size: 30px;
+            height: 45px;
+            line-height: 45px;
+            font-weight: normal;
+        }
+        .steps .title p{
+            color: #999;
+            font-size: 14px;
+            margin-top: 10px;
+            height: 21px;
+            line-height: 21px
+        }
+        .steps .desc {
+            font-size: 20px;
+            line-height: 60px;
+            color: #666;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        .option{
+            padding: 0 24px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            color: #999;
+            margin-right: 10px;
+            font-size: 20px;
+            cursor: pointer
+        }
+        .active{
+            padding: 0 24px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #f0594e;
+            color: #fff;
+            border: 1px solid #f0594e;
+        }
+        .option:first-child{
+            margin-left: 20px;
+        }
+        .active:first-child{
+            margin-left: 20px;
+        }
+        .option:hover{
+            background-color: #f0594e;
+            color: #fff;
+            border: 1px solid #f0594e;
+        }
+        .btn{
+            margin-top: 40px;
+        }
+        .btn .next{
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #f0594e;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            outline: 0;
+        }
+        .ms-tip{
+            color: #f0594e;
+            font-size: 14px;
+            margin-top: 20px;
+            display: none;
+            }
+        .steps input{
+            width: 100px;
+            text-align: center;
+            background-color: transparent;
+            border: none;
+            padding: 0 10px;
+            border-bottom:1px dashed #f0594e;
+            color: #f0594e;
+            font-size: 100%;
+        }
+        .btn .change{
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            color: #666;
+            border-radius: 4px;
+            padding: 0 20px;
+            margin-right: 20px;
+            background: none;
+            cursor: pointer;
+        }
+        .steps .btn{
+            margin-top: 20px;
+        }
+        #step2,#step3,#step4{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="steps" id="step1">
+            <div class="title">
+                <h2>梦想理财</h2>
+                <p>智能投顾，为实现家庭财富梦想助力</p>
+            </div>
+            <div class="desc" id="desc">
+                我想要完成<span class="option">吃大餐</span><span class="option">旅行</span><span class="option">短时间高收益</span>的梦想
+            </div>
+            <div class="btn">
+                <button class="next" id="next">下一步</button>
+            </div>
+            <div class="ms-tip">
+                <p>请选择您想完成的梦想</p>
+            </div>
+        </div>
+        <div class="steps" id="step2">
+            <div class="title">
+                <h2>开始为“大餐”梦想理财</h2>
+                <p>依据您想达成的吃大餐梦想，铜板街为您做了一份投资组合计划。</p>
+            </div>
+            <div class="desc">
+                我今年 <input type="text"/>,现在能投入 <input type="text"/>万元理财，<br/>
+                我希望每个月，能获得<input type="text"/>万元。
+            </div>
+            <div class="btn">
+                <button class="change">换一个梦想</button>
+                <button class="next">下一步</button>
+            </div>
+            <div class="ms-tip">
+                <p>请选择您想完成的梦想</p>
+            </div>
+        </div>
+        <div class="steps" id="step3">
+            <div class="title">
+                <h2>开始为“旅行”梦想理财</h2>
+                <p>依据您想达成的吃大餐梦想，铜板街为您做了一份投资组合计划。</p>
+            </div>
+            <div class="desc">
+                我今年 <input type="text"/>岁,现在能投入 <input type="text"/>万元理财，<br/>
+                我希望在<input type="text"/>个月后，能存够<input type="text"/>万元去旅行。
+            </div>
+            <div class="btn">
+                <button class="change">换一个梦想</button>
+                <button class="next">下一步</button>
+            </div>
+            <div class="ms-tip">
+                <p>请选择您想完成的梦想</p>
+            </div>
+        </div>
+        <div class="steps" id="step4">
+            <div class="title">
+                <h2>开始“超短期、高收益”理财计划</h2>
+                <p>依据您想达成的超短期、高收益梦想，铜板街为您做了一份投资组合计划。</p>
+            </div>
+            <div class="desc">
+                我今年 <input type="text"/>岁,现在能投入 <input type="text"/>万元理财，<br/>
+                我希望在<input type="text"/>天后，能够获得<input type="text"/>万元利息。
+            </div>
+            <div class="btn">
+                <button class="change">换一个梦想</button>
+                <button class="next">下一步</button>
+            </div>
+            <div class="ms-tip">
+                <p>请选择您想完成的梦想</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        var type = -1; //定义选项type类型
+        //获取对应的DOM元素
+        var desc = document.getElementById("desc");
+        var option = desc.getElementsByTagName("span");
+        var next = document.getElementById("next");
+        var change = document.getElementsByClassName("change");
+        var steps = document.getElementsByClassName("steps");
+        var ms1 = step1.getElementsByClassName("ms-tip")[0];
+        var length = option.length;  //选项的元素长度
+
+        reChange();//初始化 梦想
+
+        //为梦想类型加上onclick事件
+        for(var i=0;i <length;i++){
+            option[i].index=i;
+            option[i].onclick = function(){
+                type=this.index;
+                for(var j=0;j<3;j++){   //初始化选项的css样式
+                    option[j].className = "option";
+                    option[j].style.border = "1px solid #ccc";
+                }
+                //点击改变对应梦想的样式
+                this.className = "active";
+                ms1.style.display = "none";
+            }
+        }
+        for(var k=0;k<change.length;k++){
+            change[k].onclick = function(){
+                reChange();
+            };
+        }
+        next.onclick=function(){  //下一步点击判断 点击选项的类型
+            if(type==-1){
+                ms1.style.display = "block";
+                for(var n=0;n<3;n++){
+                    option[n].style.border = "1px solid #f0594e";
+                }
+            }
+            if(type==0){
+                steps[0].style.display = "none";
+                steps[1].style.display = "block";
+            }
+            if(type==1){
+                goTo();
+            }
+            if(type==2){
+                goTo();
+            }
+
+        };
+        /**/
+        /*检测type 跳为相应界面*/
+        function goTo(){
+            for(var i=0;i<steps.length;i++){
+                steps[i].style.display="none";
+            }
+            steps[type+1].style.display="block";
+        }
+        /*换个梦想 重置函数*/
+        function reChange(){
+            for(var i=0;i<steps.length;i++){
+                steps[i].style.display="none";
+            }
+            steps[0].style.display="block";
+        }
+    }
+</script>
+</html>
